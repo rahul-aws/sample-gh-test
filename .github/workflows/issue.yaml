@@ -1,0 +1,11 @@
+name: Issue Indicator
+on:
+  issues:
+  workflow_dispatch:
+    
+jobs:
+  Data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Metadata
+        run: echo "${{ github }}"
