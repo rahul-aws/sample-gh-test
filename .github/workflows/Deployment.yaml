@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Cloning Repo
         uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Linting check
         run: npm run lint
@@ -21,6 +23,8 @@ jobs:
     steps:
       - name: Cloning Repo
         uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
       
       - name: Testing Code
         run: npm run test
@@ -30,5 +34,7 @@ jobs:
     steps:
       - name: Cloning Repo
         uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
       - name: Deployment
         run: npm run build
