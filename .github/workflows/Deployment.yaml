@@ -1,0 +1,30 @@
+name: Code Deployment
+on: 
+  workflow_call:
+    push:
+      branches:
+        - main
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning Repo
+        uses: actions/checkout@v3
+
+      - name: Linting check
+        run: npm lint
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning Repo
+        uses: actions/checkout@v3
+      
+      - name: Testing Code
+        run: npm test
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning Repo
+        uses: actions/checkout@v3
+      - name: Deployment
+        run: npm build
