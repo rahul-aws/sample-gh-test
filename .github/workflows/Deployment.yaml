@@ -1,9 +1,9 @@
 name: Code Deployment
 on: 
   workflow_call:
-    push:
-      branches:
-        - main
+  push:
+    branches:
+      - main
   
 jobs:
   Lint:
